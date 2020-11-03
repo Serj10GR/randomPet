@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment, useState, useEffect} from 'react'
 
-function App() {
+import Pet from './Pet'
+
+const App = () => {
+  const [dog, setDog] = useState()
+  const [cat, setCat] = useState()
+
+  const getDog = async () => {
+    try{
+      const answer = await fetch('https://dog.ceo/api/breeds/image/random')
+      const dog = await answer.json()
+      setDog(dog.message)
+
+    }catch(error) {
+      console.log(error)
+    }
+  }
+
+  const getCat= async () => {
+    try{
+      const answer = await fetch('https://aws.random.cat/meow')
+      const cat = await answer.json()
+      setCat(cat.file)
+
+    }catch(error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    getDog()
+    getCat()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Fragment>
+      <div className="title">
+        <h1>Get Random Pets Images</h1>
+      </div>
+      <section className='pets-section'>
+        <Pet img={dog} getDog={getDog} />
+        <Pet img={cat} isCat getCat={getCat} />
+    </section>
+    </Fragment>
+  )
 }
 
-export default App;
+export default App
+

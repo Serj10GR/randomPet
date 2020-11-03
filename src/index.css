@@ -5,9 +5,57 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(212, 33%, 89%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.title {
+  text-align: center;
+  margin-top: 5rem;
+  color: hsl(209, 34%, 30%);
+}
+.pets-section {
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pet {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: hsl(210, 36%, 96%);
+  border-radius: 0.25rem;
+  margin: 2rem 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+  padding: 1.5rem 0;
+}
+
+.pet img {
+  object-fit: contain;
+  width: 100%;
+  max-height: 300px;
+  margin-bottom: 1em;
+}
+
+.btn {
+  background: hsl(205, 78%, 60%);
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  text-transform: capitalize;
+  color: #fff;
+  letter-spacing: 3px;
+  border-color: transparent;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
