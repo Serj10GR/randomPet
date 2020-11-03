@@ -59,3 +59,13 @@ code {
   margin-top: 2rem;
   font-size: 1.2rem;
 }
+
+@media (max-width: 900px) {
+  .pets-section {
+    width: 100vw;
+    flex-direction: column;
+  }
+  .pet {
+    width: 80%;
+  }
+}
