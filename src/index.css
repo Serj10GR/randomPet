@@ -27,6 +27,7 @@ code {
 
 .pet {
   width: 47%;
+  height: 430px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,6 +59,11 @@ code {
   cursor: pointer;
   margin-top: 2rem;
   font-size: 1.2rem;
+  transition: all 0.3s linear;
+}
+
+.btn:hover {
+  background: hsl(209, 34%, 30%);
 }
 
 @media (max-width: 900px) {

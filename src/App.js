@@ -9,6 +9,7 @@ const App = () => {
   const [isLoafingCat, setIsLoadingCat] = useState(true)
 
   const getDog = async () => {
+    setIsLoadingDog(true)
     try{
       const answer = await fetch('https://dog.ceo/api/breeds/image/random')
       const dog = await answer.json()
@@ -21,6 +22,7 @@ const App = () => {
   }
 
   const getCat= async () => {
+    setIsLoadingCat(true)
     try{
       const answer = await fetch('https://aws.random.cat/meow')
       const cat = await answer.json()
